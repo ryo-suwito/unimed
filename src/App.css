@@ -1,38 +1,386 @@
-.App {
-  text-align: center;
+.global-container {
+  width: 100%;
+  height: 80vh;
+  min-height: 775px;
+  min-width: 1320px;
+  background: white;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+}
+body {
+  background-color: #222;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes extra-zoom-in {
+  25% {
+      transform: scale(2.5) translateY(-10rem) translateX(23rem);
+  }
+  50% {
+      transform: scale(5.5) translateY(-6rem) translateX(24rem);
+  }
+  70% {
+      transform: scale(5.5) translateY(-6rem) translateX(24rem);
+  }
+  80% {
+      transform: scale(18.5) translateY(-6.25rem) translateX(24rem);
+  }
+  100% {
+      transform: scale(22.5) translateY(-6.15rem) translateX(24rem);
+  }
+  /* 100% {
+      transform: scale(1.02) translateY(0.55rem) translateX(0rem);
+  } */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes zoom-in {
+  0% {
+      transform: scale(1.0) translateY(0);
+  }
+  55% {
+      transform: scale(1.75) translateY(-10rem);
+  }
+  90% {
+      transform: scale(1.75) translateY(-10rem);
+  }
+  100% {
+      transform: scale(1.0) translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes pullback-swab {
+  20% {
+      transform: rotate(70deg);
+  }
+  60% {
+      left: 0.5rem;
+      top: 6.5rem;
+      transform: rotate(30deg);
+  }
+  100% {
+      left: 2.5rem;
+      transform: rotate(0);
+  }
+}
+@keyframes pullback-gunting {
+  20% {
+      transform: rotate(0);
+  }
+  60% {
+      transform: rotate(-15deg);
+  }
+  100% {
+      left: 49.5rem;
+      top: 3.5rem;
+      transform: rotate(0);
+  }
+}
+@keyframes pullback-lysisCap {
+  20% {
+      transform: rotate(0);
+  }
+  60% {
+      top: -5.5rem;
+      transform: rotate(45deg);
+  }
+  100% {
+      left: 52.5rem;
+      top: 3.75rem;
+      transform: rotate(180deg);
+  }
+}
+@keyframes pullback-lysisBottle {
+  100% {
+      left: 10.5rem;
+  }
+}
+@keyframes pullback-pipetSingle {
+  100% {
+      transform: translateX(50rem) rotate(75deg) translateY(-15rem);
+  }
+}
+@keyframes pullback-stick {
+  20% {
+      transform: rotate(0);
+  }
+  100% {
+      left: 59.5rem;
+      top: 1.5rem;
+      transform: rotate(75deg);
+  }
+}
+@keyframes remove-from-screen {
+  100% {
+      left: 100vh;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes slide-left {
+  0% {
+      transform: translateX(0)
+  }
+  25% {
+      transform: translateX(-10rem)
+  }
+  75% {
+      transform: translateX(-25rem)
+  }
+  90% {
+      transform: translateX(0)
+  }
+}
+@keyframes show-label {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes fade-in-out {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+@keyframes pipet-position {
+  100% {
+      transform: rotate(0) translateX(25rem) translateY(-15rem);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes zoom-in-tubeSingle {
+  100% {
+      transform: rotate(67deg) scale(24.5);
+      top: -18rem;
+      left: 44rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.zoom-in-tubeSingle{
+  animation-name: zoom-in-tubeSingle;
+  animation-duration: 2.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.pipet-position{
+  animation-name: pipet-position;
+  animation-duration: 2.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.zoom-out{
+  transform: scale(22.5) translateY(-6.15rem) translateX(24rem)
+}
+
+.swab-first{
+  left: 12.5rem;
+  bottom: -12.5rem;
+  transform: rotate(65deg)
+}
+.remove-from-screen{
+  animation-name: remove-from-screen;
+  animation-duration: 1.5s;
+  animation-delay: 1.5s;
+  transform: rotate(65deg);
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.pullback-lysisCap{
+  animation-name: pullback-lysisCap;
+  animation-duration: 1.5s;
+  animation-delay: 1.5s;
+  transform: rotate(65deg);
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.pullback-lysisBottle{
+  animation-name: pullback-lysisBottle;
+  animation-duration: 1.5s;
+  animation-delay: 1.5s;
+  transform: rotate(65deg);
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.pullback-swab{
+  animation-name: pullback-swab;
+  animation-duration: 3.5s;
+  animation-delay: 1.5s;
+  transform: rotate(65deg);
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.pullback-gunting{
+  animation-name: pullback-gunting;
+  animation-duration: 1.2s;
+  animation-delay: 0.5s;
+  transform: rotate(0);
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.pullback-stick{
+  animation-name: pullback-stick;
+  animation-duration: 1.2s;
+  animation-delay: 0.5s;
+  transform: rotate(0);
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+.extra-zoom-in{
+  animation-name: extra-zoom-in;
+  animation-duration: 6.5s;
+  animation-delay: 4.5s;
+  animation-fill-mode: forwards;
+}
+.fade-out{
+  animation-name: fade-out;
+  animation-duration: 1.5s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+.fade-in{
+  animation-name: fade-in-out;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+.fade-in-2{
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-delay: 4.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+.fade-out3{
+  animation-name: fade-out;
+  animation-duration: 1.5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+.fade-in4{
+  animation-name: fade-in-out;
+  animation-duration: 3s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+.fade-in5{
+  animation-name: fade-in;
+  animation-duration: 2.5s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+
+.header{
+  width: 100vw;
+  height: 10vh;
+  background: coral;
+}
+.slide-left{
+    animation-name: slide-left;
+    animation-delay: 8s;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.world-wrapper{
+  width: 100%;
+  height: 100%;
+  position: relative; 
+  display: block;
+}
+.zoom-in{
+  animation-name: zoom-in;
+  animation-duration: 20s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  transform-origin:top left;
+}
+.text-label{
+  position:absolute;
+  z-index:1000;
+  bottom:0;
+  left:12.75rem;
+  background-color:rgba(0,0,0,0.64);
+  font-weight:bold;
+  padding:0.1rem 0.65rem;
+  margin:0;
+  opacity: 0;
+}
+
+.show-label1{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 7.5s;
+  animation-fill-mode: forwards;
+}
+.show-label2{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 8.5s;
+  animation-fill-mode: forwards;
+}
+.show-label3{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
+}
+.show-label4{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 9.5s;
+  animation-fill-mode: forwards;
+}
+.show-label5{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 10s;
+  animation-fill-mode: forwards;
+}
+.show-label6{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 10.5s;
+  animation-fill-mode: forwards;
+}
+.show-label7{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 11s;
+  animation-fill-mode: forwards;
+}
+.show-label8{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 11.5s;
+  animation-fill-mode: forwards;
+}
+.show-label9{
+  animation-name: show-label;
+  animation-duration: 0.25s;
+  animation-delay: 12s;
+  animation-fill-mode: forwards;
 }
