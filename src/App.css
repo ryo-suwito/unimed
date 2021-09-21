@@ -13,20 +13,10 @@ body {
 }
 
 @keyframes extra-zoom-in {
-  25% {
-      transform: scale(2.5) translateY(-10rem) translateX(23rem);
-  }
-  50% {
-      transform: scale(5.5) translateY(-6rem) translateX(24rem);
-  }
-  70% {
-      transform: scale(5.5) translateY(-6rem) translateX(24rem);
-  }
-  80% {
-      transform: scale(18.5) translateY(-6.25rem) translateX(24rem);
-  }
   100% {
-      transform: scale(22.5) translateY(-6.15rem) translateX(24rem);
+      left:226rem;
+      top:-66rem;
+      transform: scale(9.5);
   }
   /* 100% {
       transform: scale(1.02) translateY(0.55rem) translateX(0rem);
@@ -58,6 +48,7 @@ body {
   }
   100% {
       left: 2.5rem;
+      top: -3.5rem;
       transform: rotate(0);
   }
 }
