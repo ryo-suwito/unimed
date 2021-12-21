@@ -317,7 +317,7 @@ function Page4() {
         <div style={{ position: "absolute", bottom: "1rem", left: "4rem" }}>
           <Link to="/page3a"><img src={Next} style={{
             transform: "rotate(180deg)",
-            width: '3.5rem', height: "auto"
+            width: '5rem', height: "auto"
           }}></img></Link>
         </div>
         <div style={{ position: "absolute", bottom: "1rem", right: "4rem" }}>
